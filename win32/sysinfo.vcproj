@@ -104,7 +104,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../lib;../lib/deps"
+				AdditionalIncludeDirectories="../lib;../lib/deps;../sigar/include"
 				PreprocessorDefinitions="WIN32"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
@@ -124,7 +124,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib"
+				AdditionalDependencies="ws2_32.lib sigar.lib"
+				AdditionalLibraryDirectories="$(OutDir)\"
 				GenerateDebugInformation="true"
 			/>
 			<Tool
@@ -252,24 +253,68 @@
 		<Filter
 			Name="sysinfo"
 			>
+		</Filter>
+		<Filter
+			Name="main"
+			>
 			<File
-				RelativePath="..\sysinfo\Command.cpp"
+				RelativePath="..\main\AutoRegisterCommand.h"
 				>
 			</File>
 			<File
-				RelativePath="..\sysinfo\Command.h"
+				RelativePath="..\main\Command.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\sysinfo\FakeCommand.h"
+				RelativePath="..\main\Command.h"
 				>
 			</File>
 			<File
-				RelativePath="..\sysinfo\SysInfo.cpp"
+				RelativePath="..\main\CommandFactory.h"
 				>
 			</File>
 			<File
-				RelativePath="..\sysinfo\SysInfo.h"
+				RelativePath="..\main\CommandFactoryImpl.h"
+				>
+			</File>
+			<File
+				RelativePath="..\main\CommandFactoryRegistry.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\main\CommandFactoryRegistry.h"
+				>
+			</File>
+			<File
+				RelativePath="..\main\CpuInfo.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\main\CpuInfo.h"
+				>
+			</File>
+			<File
+				RelativePath="..\main\FakeCommand.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\main\FakeCommand.h"
+				>
+			</File>
+			<File
+				RelativePath="..\main\Input.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\main\Input.h"
+				>
+			</File>
+			<File
+				RelativePath="..\main\SysInfo.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\main\SysInfo.h"
 				>
 			</File>
 		</Filter>

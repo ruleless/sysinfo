@@ -1,17 +1,19 @@
 #include "Command.h"
-#include "SysInfo.h"
 #include "common/timestamp.h"
 
-Command::Command()
+Command::Command(Listener *pListener)
 :mMyStream()
 ,mCommandName("")
 ,mExRunTime(0)
 ,mNextInterval(0)
+,mForceQuit(false)
+,mpListener(pListener)
 {
 }
 
 Command::~Command()
 {
+	mpListener->onCommandDestroy(this);
 }
 
 bool Command::parseCommond(const vector<string> &argv)
@@ -35,7 +37,7 @@ bool Command::process()
 TPTask::TPTaskState Command::presentMainThread()
 {
 	TPTask::TPTaskState retState = TPTask_Completed;
-	if (0 == mNextInterval)
+	if (mForceQuit || 0 == mNextInterval)
 	{
 		retState = TPTask_Completed;
 	}
@@ -47,7 +49,11 @@ TPTask::TPTaskState Command::presentMainThread()
 	{
 		retState = TPTask_ContinueChildThread;
 	}
-	gpSysInfo->getOutStream()<<mMyStream.data();
+	
+	if (mpListener->onOutputStream(this, mMyStream))
+	{
+		mMyStream.clear();
+	}
 
 	return retState;
 }

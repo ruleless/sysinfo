@@ -2,22 +2,21 @@
 #define __FAKECOMMAND_H__
 
 #include "Command.h"
+#include "AutoRegisterCommand.h"
 
 class FakeCommand : public Command
 {
-protected:
 public:
-	FakeCommand()
+	COMMAND_DECLARATION(FakeCommand);
+public:
+	FakeCommand(Listener *pListener)
+		:Command(pListener)
 	{
 	}
 
 	virtual ~FakeCommand() {}
 
-	virtual ulong _runCommand()
-	{
-		mMyStream<<"I am Fake Command!\n";
-		return 0;
-	}
+	virtual ulong _runCommand();
 };
 
 #endif // __FAKECOMMAND_H__

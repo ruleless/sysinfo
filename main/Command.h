@@ -9,13 +9,21 @@ using namespace std;
 
 class Command : public TPTask
 {
+public:
+	struct Listener 
+	{
+		virtual void onCommandDestroy(Command *pCmd) = 0;
+		virtual bool onOutputStream(Command *pCmd, const obuf& ob) = 0;
+	};
 protected:
 	obuf mMyStream;
 	string mCommandName;
 	ulong mExRunTime;
 	ulong mNextInterval;
+	bool mForceQuit;
+	Listener *mpListener;
 public:
-	Command();
+	Command(Listener *pListener);
 	virtual ~Command();
 
 	bool parseCommond(const vector<string> &argv);
@@ -25,6 +33,15 @@ public:
 	virtual ulong _runCommand() = 0;
 
 	virtual TPTask::TPTaskState presentMainThread();
+
+	inline bool forceQuit()
+	{
+		return mForceQuit;
+	}
+	inline void forceQuit(bool b)
+	{
+		mForceQuit = b;
+	}
 };
 
 #endif // __COMMAND_H__
