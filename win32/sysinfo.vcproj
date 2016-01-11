@@ -104,7 +104,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../lib;../lib/deps;../sigar/include"
+				AdditionalIncludeDirectories="../lib;../lib/deps;../sigar/include;../main;../sysinfo"
 				PreprocessorDefinitions="WIN32"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
@@ -253,6 +253,22 @@
 		<Filter
 			Name="sysinfo"
 			>
+			<File
+				RelativePath="..\sysinfo\CpuInfo.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\sysinfo\CpuInfo.h"
+				>
+			</File>
+			<File
+				RelativePath="..\sysinfo\FakeCommand.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\sysinfo\FakeCommand.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="main"
@@ -283,22 +299,6 @@
 			</File>
 			<File
 				RelativePath="..\main\CommandFactoryRegistry.h"
-				>
-			</File>
-			<File
-				RelativePath="..\main\CpuInfo.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\main\CpuInfo.h"
-				>
-			</File>
-			<File
-				RelativePath="..\main\FakeCommand.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\main\FakeCommand.h"
 				>
 			</File>
 			<File

@@ -271,7 +271,7 @@ void ThreadPool::destroy()
 	int itry = 0;
 	while(true)
 	{
-		sleepms(300);
+		sleepms(32);
 		itry++;
 
 		std::string taskaddrs = "";
