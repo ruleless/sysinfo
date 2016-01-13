@@ -348,7 +348,7 @@ class BufferAllocatorEx : public Allocator
 
 	void* realloc(void* ptr, size_t old_size, size_t new_size, size_t& capacity)
 	{
-		assert((ptr && old_size) || (!ptr && old_size == 0) && new_size > 0);
+		// assert((ptr && old_size) || (!ptr && old_size == 0) && new_size > 0);
 		if (!ptr || new_size > capacity)
 		{
 			size_t good_size = capacity ? capacity : new_size;

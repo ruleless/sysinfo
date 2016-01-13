@@ -269,6 +269,14 @@
 				RelativePath="..\sysinfo\FakeCommand.h"
 				>
 			</File>
+			<File
+				RelativePath="..\sysinfo\MemInfo.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\sysinfo\MemInfo.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="main"

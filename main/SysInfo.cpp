@@ -42,6 +42,8 @@ void SysInfo::run()
 	std::string hint = ">";
 	while (true)
 	{
+		sleepms(16);
+
 		if (hint.length() > 0)
 		{
 			printf("%s", hint.c_str());
@@ -84,7 +86,13 @@ void SysInfo::run()
 		mpThreadPool->onMainThreadTick();
 		if (mOutStream.size() > 0)
 		{
-			printf("%s", mOutStream.data());
+			InBuffer ib(mOutStream.data(), mOutStream.size());
+			while (ib.space() > 0)
+			{
+				const char *buf = NULL;
+				ib>>buf;
+				printf("%s", buf);
+			}
 			mOutStream.clear();
 			hint = ">";
 		}
@@ -157,7 +165,7 @@ void SysInfo::onCommandDestroy(Command *pCmd)
 
 bool SysInfo::onOutputStream(Command *pCmd, const obuf& ob)
 {
-	mOutStream<<ob.data();
+	mOutStream.push_back(ob.data(), ob.size());
 	return true;
 }
 
