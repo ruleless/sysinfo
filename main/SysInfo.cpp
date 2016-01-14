@@ -121,7 +121,7 @@ Command* SysInfo::_parseUserCommand(const vector<string> &argv)
 
 	if (pCommand)
 	{
-		if (!pCommand->parseCommond(argv))
+		if (!pCommand->parseCommond(argv, mOutStream))
 		{
 			delete pCommand;
 			pCommand = NULL;

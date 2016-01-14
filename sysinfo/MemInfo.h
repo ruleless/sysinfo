@@ -9,10 +9,13 @@ class MemInfo : public Command
 public:
 	COMMAND_DECLARATION(MemInfo);
 protected:
+	bool mbPrintSwap;
+	ulong mInterval;
 public:
 	MemInfo(Listener *pListener);
 	virtual ~MemInfo();
 
+	virtual bool _parseArg(const vector<string> &argv, obuf &outStream);
 	virtual ulong _runCommand();
 };
 

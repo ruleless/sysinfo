@@ -26,8 +26,8 @@ public:
 	Command(Listener *pListener);
 	virtual ~Command();
 
-	bool parseCommond(const vector<string> &argv);
-	virtual bool _parseArg(const vector<string> &argv) { return true; }
+	bool parseCommond(const vector<string> &argv, obuf &outStream);
+	virtual bool _parseArg(const vector<string> &argv, obuf &outStream) { return true; }
 
 	virtual bool process();
 	virtual ulong _runCommand() = 0;

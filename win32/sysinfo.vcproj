@@ -277,6 +277,14 @@
 				RelativePath="..\sysinfo\MemInfo.h"
 				>
 			</File>
+			<File
+				RelativePath="..\sysinfo\utils.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\sysinfo\utils.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="main"

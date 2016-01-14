@@ -16,12 +16,12 @@ Command::~Command()
 	mpListener->onCommandDestroy(this);
 }
 
-bool Command::parseCommond(const vector<string> &argv)
+bool Command::parseCommond(const vector<string> &argv, obuf &outStream)
 {
 	if (argv.size() >= 1)
 	{
 		mCommandName = argv[0];
-		return _parseArg(argv);
+		return _parseArg(argv, outStream);
 	}
 	return false;
 }
