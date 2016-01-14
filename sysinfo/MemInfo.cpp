@@ -1,5 +1,4 @@
 #include "MemInfo.h"
-#include "sigar.h"
 #include "utils.h"
 
 COMMAND_IMPLEMENTION(MemInfo, "mem");
@@ -59,6 +58,7 @@ bool MemInfo::_parseArg(const vector<string> &argv, obuf &outStream)
 
 		++i;
 	}
+	return true;
 }
 
 ulong MemInfo::_runCommand()

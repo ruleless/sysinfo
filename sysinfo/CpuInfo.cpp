@@ -1,5 +1,4 @@
 #include "CpuInfo.h"
-#include "sigar.h"
 
 COMMAND_IMPLEMENTION(CpuInfo, "cpu");
 COMMAND_FACTORY_REGISTRATION(CpuInfo);

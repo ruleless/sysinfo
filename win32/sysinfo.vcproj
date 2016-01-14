@@ -278,6 +278,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\sysinfo\uptime.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\sysinfo\uptime.h"
+				>
+			</File>
+			<File
 				RelativePath="..\sysinfo\utils.cpp"
 				>
 			</File>

@@ -5,6 +5,12 @@
 #include "common/Buffer.h"
 #include "thread/ThreadTask.h"
 
+extern "C"
+{
+#include "sigar.h"
+#include "sigar_format.h"
+};
+
 using namespace std;
 
 class Command : public TPTask
