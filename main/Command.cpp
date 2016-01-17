@@ -1,5 +1,5 @@
 #include "Command.h"
-#include "common/timestamp.h"
+#include "timestamp.h"
 
 Command::Command(Listener *pListener)
 :mMyStream()

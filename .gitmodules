@@ -1,3 +1,6 @@
 [submodule "sigar"]
 	path = sigar
 	url = git@github.com:ruleless/sigar.git
+[submodule "snail"]
+	path = snail
+	url = git@github.com:ruleless/snail.git

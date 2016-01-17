@@ -1,5 +1,5 @@
-#include "common/common.h"
-#include "thread/ThreadPool.h"
+#include "common.h"
+#include "ThreadPool.h"
 #include "SysInfo.h"
 #include "CommandFactoryRegistry.h"
 

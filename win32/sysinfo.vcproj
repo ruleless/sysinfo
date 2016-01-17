@@ -104,7 +104,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../lib;../lib/deps;../sigar/include;../main;../sysinfo"
+				AdditionalIncludeDirectories="../sigar/include;../main;../sysinfo;../snail/include"
 				PreprocessorDefinitions="WIN32"
 				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
@@ -124,8 +124,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="ws2_32.lib sigar.lib"
-				AdditionalLibraryDirectories="$(OutDir)\"
+				AdditionalDependencies="ws2_32.lib libsigar_d.lib libsnail_d.lib"
+				AdditionalLibraryDirectories="../snail/lib;../sigar/lib"
 				GenerateDebugInformation="true"
 			/>
 			<Tool
@@ -159,98 +159,6 @@
 	</References>
 	<Files>
 		<Filter
-			Name="common"
-			>
-			<File
-				RelativePath="..\lib\common\Buffer.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\common.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\common.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\MemoryStream.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\MemoryStream.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\MemoryStreamConverter.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\ObjectPool.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\platform.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\Singleton.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\strutil.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\strutil.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\Task.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\timestamp.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\common\timestamp.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="thread"
-			>
-			<File
-				RelativePath="..\lib\thread\concurrency.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\thread\concurrency.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\thread\ThreadGuard.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\thread\ThreadMutex.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\thread\ThreadPool.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\thread\ThreadPool.h"
-				>
-			</File>
-			<File
-				RelativePath="..\lib\thread\ThreadTask.h"
-				>
-			</File>
-		</Filter>
-		<Filter
 			Name="sysinfo"
 			>
 			<File
@@ -275,14 +183,6 @@
 			</File>
 			<File
 				RelativePath="..\sysinfo\MemInfo.h"
-				>
-			</File>
-			<File
-				RelativePath="..\sysinfo\uptime.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\sysinfo\uptime.h"
 				>
 			</File>
 			<File

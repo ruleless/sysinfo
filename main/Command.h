@@ -1,9 +1,9 @@
 #ifndef __COMMAND_H__
 #define __COMMAND_H__
 
-#include "common/common.h"
-#include "common/Buffer.h"
-#include "thread/ThreadTask.h"
+#include "common.h"
+#include "Buffer.h"
+#include "ThreadTask.h"
 
 extern "C"
 {

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sysinfo", "sysinfo.vcproj", "{E9AAE810-DD1B-462F-98B2-5371F683C2A0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sigar", "..\..\sigar\win32\sigar.vcproj", "{C850BB32-98E9-4720-AA9E-C7CA903D3CAF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sigar", "..\sigar\win32\sigar.vcproj", "{0C65C334-40C8-48C8-A71C-96E207768CF2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "snail", "..\snail\build\snail.vcproj", "{0D0CEDC2-905A-49B0-B89B-DC13AE72D633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +17,14 @@ Global
 		{E9AAE810-DD1B-462F-98B2-5371F683C2A0}.Debug|Win32.Build.0 = Debug|Win32
 		{E9AAE810-DD1B-462F-98B2-5371F683C2A0}.Release|Win32.ActiveCfg = Release|Win32
 		{E9AAE810-DD1B-462F-98B2-5371F683C2A0}.Release|Win32.Build.0 = Release|Win32
-		{C850BB32-98E9-4720-AA9E-C7CA903D3CAF}.Debug|Win32.ActiveCfg = Debug|Win32
-		{C850BB32-98E9-4720-AA9E-C7CA903D3CAF}.Debug|Win32.Build.0 = Debug|Win32
-		{C850BB32-98E9-4720-AA9E-C7CA903D3CAF}.Release|Win32.ActiveCfg = Release|Win32
-		{C850BB32-98E9-4720-AA9E-C7CA903D3CAF}.Release|Win32.Build.0 = Release|Win32
+		{0C65C334-40C8-48C8-A71C-96E207768CF2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C65C334-40C8-48C8-A71C-96E207768CF2}.Debug|Win32.Build.0 = Debug|Win32
+		{0C65C334-40C8-48C8-A71C-96E207768CF2}.Release|Win32.ActiveCfg = Release|Win32
+		{0C65C334-40C8-48C8-A71C-96E207768CF2}.Release|Win32.Build.0 = Release|Win32
+		{0D0CEDC2-905A-49B0-B89B-DC13AE72D633}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0D0CEDC2-905A-49B0-B89B-DC13AE72D633}.Debug|Win32.Build.0 = Debug|Win32
+		{0D0CEDC2-905A-49B0-B89B-DC13AE72D633}.Release|Win32.ActiveCfg = Release|Win32
+		{0D0CEDC2-905A-49B0-B89B-DC13AE72D633}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

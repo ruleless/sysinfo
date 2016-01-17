@@ -1,7 +1,7 @@
 #ifndef __INPUT_H__
 #define __INPUT_H__
 
-#include "thread/ThreadTask.h"
+#include "ThreadTask.h"
 
 class Input : public TPTask
 {

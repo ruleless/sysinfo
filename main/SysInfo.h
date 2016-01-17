@@ -1,8 +1,8 @@
 #ifndef __SYSINFO_H__
 #define __SYSINFO_H__
 
-#include "common/common.h"
-#include "common/Buffer.h"
+#include "common.h"
+#include "Buffer.h"
 #include "Command.h"
 #include "Input.h"
 
