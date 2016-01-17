@@ -8,7 +8,7 @@ class CpuInfo : public Command
 {
 public:
 	COMMAND_DECLARATION(CpuInfo);
-protected:	
+protected:
 public:
 	CpuInfo(Listener *pListener);
 	virtual ~CpuInfo();
