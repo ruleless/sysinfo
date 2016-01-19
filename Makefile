@@ -1,3 +1,3 @@
-dirs:=sigar snail sysinfo main
+dirs:=sigar snail sysinfo main build
 
-include common.mak
+include build.mak

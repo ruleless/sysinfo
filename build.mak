@@ -1,4 +1,4 @@
-default?=all
+phonyt?=allt
 
 CC=clang
 CXX=clang++
@@ -20,36 +20,44 @@ OBJS=$(SRCS:%.cpp=%.o)
 DEPENDS=$(SRCS:%.cpp=%.d)
 
 
-.PHONY:all onlyobj fake
+# Phony target
+.PHONY:default fake allt objt subdirs
+
+default:$(phonyt)
+
+allt:$(LIBPATH) $(EXEPATH) $(TARGET) $(LIB) subdirs
+objt:$(OBJS) subdirs
+
+$(LIBPATH):
+	mkdir $(LIBPATH)
+$(EXEPATH):
+	mkdir $(EXEPATH)
+
 
 # First Layer
-root:$(default)
-
-all:subdirs $(TARGET) $(LIB)
-obj:$(OBJS)
-
-subdirs:$(SUBDIRS)
-	for dir in $(SUBDIRS); \
-		do $(MAKE) -C $$dir all||exit 1; \
-	done
-
 $(TARGET):$(OBJS) $(SPECOBJS)
 	$(CXX) -o $@ $^ $(LDFLAGS)
-ifdef $(EXEPATH)
+ifdef EXEPATH
 	cp $@ $(EXEPATH)
 endif
 
 $(LIB):$(OBJS) $(SPECOBJS)
 	$(AR)  $@  $^
-	-mkdir $(LIBPATH)
+ifdef LIBPATH
 	cp $@ $(LIBPATH)
+endif
+
+subdirs:$(SUBDIRS)
+	for dir in $(SUBDIRS); \
+		do $(MAKE) -C $$dir||exit 1; \
+	done
 
 
 # Second Layer for object file deprule
 $(OBJS):%.o:%.cpp
 	$(CXX) -c $< -o $@ $(CXXFLAGS)
 
-# Second Layer for dependency file deprule
+## Second Layer for dependency file deprule
 -include $(DEPENDS)
 
 $(DEPENDS):%.d:%.cpp
@@ -69,5 +77,3 @@ clean:
 
 # for debug
 fake:
-	@echo $(default)
-	@echo $(OBJS)
